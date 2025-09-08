@@ -26,7 +26,7 @@ For this deliverable I did the following. I checked the box `[x]` and added a de
 
 ### Elevator pitch
 
-Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+The concept for this startup is a colaborative calander designed to easily indicate the amount of energy and preperation required for scheduled activities. It will be designed for those who struggle with overplanning, providing a score for how much energy an activity would require. Tags such as travel, packing, or workout could be added to each activity for an easy view of what to plan for. The user would also have the option to indicate a secret desire to cancel. This indication remains secret unless all parties indicate that they wish to cancel, in which case the event is deleted.
 
 ### Design
 
