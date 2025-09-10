@@ -20,7 +20,7 @@ For this deliverable I did the following. I checked the box `[x]` and added a de
 
 - [ ] Proper use of Markdown
 - [x] A concise and compelling elevator pitch
-- [ ] Description of key features
+- [x] Description of key features
 - [ ] Description of how you will use each technology
 - [ ] One or more rough sketches of your application. Images must be embedded in this file using Markdown image references.
 
@@ -35,9 +35,9 @@ This is my design for my startup
 
 ### Key features
 
-- Describe your key feature
-- Describe your key feature
-- Describe your key feature
+- The calander will allow for collaborative planning of events
+- Certain indicators can be marked to allow the program to provide a rough idea of how much energy is being spent on the plans that are made
+- Provides an option to mark a desire for the planned event to be cancled. Should all parties involved mark this, the calander will cancel the plans automatically.
 
 ### Technologies
 
