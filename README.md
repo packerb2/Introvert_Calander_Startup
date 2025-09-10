@@ -18,11 +18,11 @@ A brief description of the application here. Lorem ipsum dolor sit amet, consect
 
 For this deliverable I did the following. I checked the box `[x]` and added a description for things I completed.
 
-- [ ] Proper use of Markdown
+- [x] Proper use of Markdown
 - [x] A concise and compelling elevator pitch
 - [x] Description of key features
-- [ ] Description of how you will use each technology
-- [ ] One or more rough sketches of your application. Images must be embedded in this file using Markdown image references.
+- [x] Description of how you will use each technology
+- [x] One or more rough sketches of your application. Images must be embedded in this file using Markdown image references.
 
 ### Elevator pitch
 
@@ -43,12 +43,12 @@ This is my design for my startup
 
 I am going to use the required technologies in the following ways.
 
-- **HTML** - Description here
-- **CSS** - Description here
-- **React** - Description here
-- **Service** - Description here
-- **DB/Login** - Description here
-- **WebSocket** - Description here
+- **HTML** - I will use this for organizing the the elements of the calander
+- **CSS** - I will use this to animate the drop down and expansions of selected events so that they slide into place rather than just appearing
+- **React** - This will allow the users to select different days on the calander, select event collaborators, and edit events
+- **Service** - The user will be able to login to see their events and search for collaborators
+- **DB/Login** - Events and users will be stored on the database
+- **WebSocket** - Creation of, feelings toward, and deletion of events will be communicated to the server
 
 ## 🚀 AWS deliverable
 
