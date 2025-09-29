@@ -54,21 +54,21 @@ I am going to use the required technologies in the following ways.
 
 For this deliverable I did the following. I checked the box `[x]` and added a description for things I completed.
 
-- [ ] **Server deployed and accessible with custom domain name** - [My server link](https://yourdomainnamehere.click).
+- [x] **Server deployed and accessible with custom domain name** - [My server link](https://startup.packerbarlow.click/).
 
 ## 🚀 HTML deliverable
 
 For this deliverable I did the following. I checked the box `[x]` and added a description for things I completed.
 
-- [ ] **HTML pages** - I did not complete this part of the deliverable.
-- [ ] **Proper HTML element usage** - I did not complete this part of the deliverable.
-- [ ] **Links** - I did not complete this part of the deliverable.
-- [ ] **Text** - I did not complete this part of the deliverable.
-- [ ] **3rd party API placeholder** - I did not complete this part of the deliverable.
-- [ ] **Images** - I did not complete this part of the deliverable.
-- [ ] **Login placeholder** - I did not complete this part of the deliverable.
-- [ ] **DB data placeholder** - I did not complete this part of the deliverable.
-- [ ] **WebSocket placeholder** - I did not complete this part of the deliverable.
+- [x] **HTML pages** - I have 4 pages for my HTML code. 1 for the main calander, 1 for a login, 1 for an analysis of activities, and 1 for an about section
+- [x] **Proper HTML element usage** - I tried to make sure that all of my elements in my HTML files were correct and easy to identitfy
+- [x] **Links** - I have links to my GitHub and links to each of the pages
+- [x] **Text** - I have descriptions in the about, and titles on each of the pages
+- [x] **3rd party API placeholder** - I have a spot for a calander. I wasn't sure how it will be implimented later, so some adjustments may need to be made
+- [x] **Images** - I have a spot for an image in the about section
+- [x] **Login placeholder** - I have a login spot
+- [x] **DB data placeholder** - I have a place to create an acount
+- [x] **WebSocket placeholder** - I have buttons that I plan to have do stuff
 
 ## 🚀 CSS deliverable
 
