@@ -4,25 +4,36 @@
         <meta charset="UTF-8" />
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
         <title>Spoon Saver Calander</title>
+
+        <link rel="stylesheet" href="calander.css" />
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+    />
     </head>
-    <body>
-        <header>
-            <h1>Spoon Saver Calander</h1>
-            <nav>
-                <menu>
-                    <li><a href="index.html">Home</a></li>
-                    <li><a href="calander.html">View Calander</a></li>
-                    <li><a href="analysis.html">Spoon Analysis</a></li>
-                    <li><a href="about.html">About</a></li>
+    <body class="bg-dark text-light">
+        <header class="container-fluid">
+            <nav class="nabbar navbar-dark">
+                <font size="6"><a class="navbar-brand" href="#">Spoon Saver Calander</a></font>
+                <menu class="navbar-nav">
+                    <li class="nav-item">
+                        <a class="nav-link" href="index.html">Home</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link active" href="calander.html">View Calander</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="analysis.html">Spoon Analysis</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="about.html">About</a>
+                    </li>
                 </menu>
             </nav>
-            <hr />
         </header>
 
         <main>
-            <header>
-                <h2>Name's Calander</h2>
-            </header>
+            <p></p>
             <p>You have events this week with:</p>
             <ul class="friends">
                 <li class="friend-name">Joe</li>
@@ -32,10 +43,10 @@
             <p></p>
             <p>Notifications:</p>
             <ul class="notifications">
-                <li class="new-alert">Bob has invited you to an event: Barbeque <button type="accept">Accept?</button></li>
-                <li class="new-alert">Bob has invited you to an event: Movie Night <button type="accept">Accept?</button></li>
+                <li class="new-alert">Bob has invited you to an event: Barbeque <button type="accept">Accept?</button><button type="accept">Reject?</button></li>
+                <li class="new-alert">Bob has invited you to an event: Movie Night <button type="accept">Accept?</button><button type="accept">Reject?</button></li>
                 <li class="cancel-alert">Steven has canceled an event: Wedding</li>
-                <li class="new-alert">Joe has invited you to an event: Pool <button type="accept">Accept?</button></li>
+                <li class="new-alert">Joe has invited you to an event: Pool <button type="accept">Accept?</button><button type="accept">Reject?</button></li>
             </ul>
 
             <div>
@@ -357,8 +368,7 @@
                     <button type="add-spoon">Requires Packing</button>
                     <button type="add-spoon">No Leaving Early</button>
                     <button type="add-spoon">Hosting</button>
-                    <li><button type="secret-cancel">Secretly wish everyone else cancels</button></li>
-                    <li><button type="cancel">Cancel Event</button></li>
+                    <li><button type="secret-cancel">Secretly wish everyone else cancels</button><button type="cancel">Cancel Event</button></li>
                 </p>
                 <hr />
                 <p class="event-name">Event 2:
@@ -370,18 +380,18 @@
                     <button type="add-spoon">Requires Packing</button>
                     <button type="add-spoon">No Leaving Early</button>
                     <button type="add-spoon">Hosting</button>
-                    <li><button type="secret-cancel">Secretly wish everyone else cancels</button></li>
-                    <li><button type="cancel">Cancel Event</button></li>
+                    <li><button type="secret-cancel">Secretly wish everyone else cancels</button><button type="cancel">Cancel Event</button></li>
                 </p>
             <p></p>
             </ul>
         </main>
 
-        <footer>
-            <hr />
-            <span class="author">Website created by Packer Barlow</span>
-            <br />
-            <a href="https://github.com/packerb2/Introvert_Calander_Startup.git">My GitHub</a>
+        <footer class="bg-dark text-white-50">
+            <div class="container-fluid">
+                <hr />
+                <span class="text-rest">Website created by Packer Barlow</span>
+                <a class="text-reset" href="https://github.com/packerb2/Introvert_Calander_Startup.git">My GitHub</a>
+                </div>
         </footer>
     </body>
 
