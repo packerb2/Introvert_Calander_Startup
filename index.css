@@ -27,11 +27,18 @@ menu {
   list-style: none;
 }
 
-.navbar-brand {
-  padding-left: 0.3em;
-  border-bottom: solid rgb(182, 182, 182) thin;
+footer a {
+  float: right;
 }
 
-menu .nav-item {
-  padding: 0 0.3em;
+@media (max-height: 600px) {
+  header {
+    display: none;
+  }
+  footer {
+    display: none;
+  }
+  main {
+    flex: 1 100vh;
+  }
 }
