@@ -17,14 +17,16 @@ main {
   background-color: rgb(33, 26, 80);
 }
 
+.newevent {border-radius: 8px; height: 90px; width: 200px; font-size: 25px;}
+.newevent:hover {background-color: lightgreen;}
 .accept {border-radius: 8px;}
-.accept:hover {background-color: lightgreen;}
+.accept:hover {background-color: black; color: white;}
 .reject {border-radius: 8px;}
-.reject:hover {background-color: darksalmon;}
+.reject:hover {background-color: black; color: white;}
 .dismiss {border-radius: 8px;}
-.dismiss:hover {background-color: khaki;}
+.dismiss:hover {background-color: black; color: white;}
 .addspoon {border-radius: 8px;}
-.addspoon:hover {background-color: khaki;}
+.addspoon:hover {background-color: black; color: white;}
 .soft {border-radius: 8px;}
 .soft:hover {background-color: darksalmon;}
 .cancel {border-radius: 8px;}
@@ -32,6 +34,24 @@ main {
 
 footer {
   flex: 0 30px;
+}
+
+.calandertop {
+  flex: 1;
+  display: flex;
+  flex-direction: row !important;
+  list-style: none;
+  align-items: center;
+  justify-content: space-around;
+}
+
+.notifications {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  list-style: none;
+  align-items: center;
+  justify-content: space-around;
 }
 
 menu {
