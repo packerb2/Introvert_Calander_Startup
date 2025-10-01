@@ -17,29 +17,18 @@ main {
   background-color: rgb(33, 26, 80);
 }
 
-.accept {
-    border-radius: 8px;
-}
-
-.accept:hover {
-    background-color: lightgreen;
-}
-
-.reject {
-    border-radius: 8px;
-}
-
-.reject:hover {
-    background-color: darksalmon;
-}
-
-.dismiss {
-    border-radius: 8px;
-}
-
-.dismiss:hover {
-    background-color: khaki;
-}
+.accept {border-radius: 8px;}
+.accept:hover {background-color: lightgreen;}
+.reject {border-radius: 8px;}
+.reject:hover {background-color: darksalmon;}
+.dismiss {border-radius: 8px;}
+.dismiss:hover {background-color: khaki;}
+.addspoon {border-radius: 8px;}
+.addspoon:hover {background-color: khaki;}
+.soft {border-radius: 8px;}
+.soft:hover {background-color: darksalmon;}
+.cancel {border-radius: 8px;}
+.cancel:hover {background-color: red;}
 
 footer {
   flex: 0 30px;
