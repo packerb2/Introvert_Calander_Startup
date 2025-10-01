@@ -39,6 +39,7 @@ footer {
 .calandertop {
   flex: 1;
   display: flex;
+  gap: 70px;
   flex-direction: row !important;
   list-style: none;
   align-items: center;
