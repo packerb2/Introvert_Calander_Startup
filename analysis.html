@@ -4,45 +4,58 @@
         <meta charset="UTF-8" />
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
         <title>Spoon Saver Calander</title>
+
+        <link rel="stylesheet" href="analysis.css" />
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+    />
     </head>
-    <body>
-        <header>
-            <h1>Spoon Saver Calander</h1>
-            <nav>
-                <menu>
-                    <li><a href="index.html">Home</a></li>
-                    <li><a href="calander.html">View Calander</a></li>
-                    <li><a href="analysis.html">Spoon Analysis</a></li>
-                    <li><a href="about.html">About</a></li>
+    <body class="bg-dark text-light">
+        <header class="container-fluid">
+            <nav class="nabbar navbar-dark">
+                <font size="6"><a class="navbar-brand" href="#">Spoon Saver Calander</a></font>
+                <menu class="navbar-nav">
+                    <li class="nav-item">
+                        <a class="nav-link" href="index.html">Home</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="calander.html">View Calander</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link active" href="analysis.html">Spoon Analysis</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="about.html">About</a>
+                    </li>
                 </menu>
             </nav>
-            <hr />
         </header>
 
         <main>
-            <p>An Analysis of your Activities and the spoons used by them.</p>
-            <p>Scores are given on a scale of 1-5</p>
-            <p>A 1 indicating a lower level of spoon consumption</p>
-            <p>A 5 indicates a higher level of spoon consumption</p>
-            <table>
+            <p>A Summary of the amount of Spoons used by your recent activities.</p>
+            <table class="table table-warning table-striped-columns">
                 <ht1>At a Glance:</ht1>
-                <thead>
+                <thead class="table-dark">
                     <th></th>
-                    <th>Highest Day</th>
-                    <th>Lowest Day</th>
-                    <th>Average Day</th>
+                    <th>Highest Score</th>
+                    <th>Lowest Score</th>
+                    <th>Total Score</th>
+                    <th>Average Score</th>
                 </thead>
                 <tbody>
                     <tr>
                         <th>This Week</th>
-                        <td>5</td>
-                        <td>1</td>
+                        <td>5 (Wednesday)</td>
+                        <td>1 (Monday)</td>
+                        <td>23</td>
                         <td>3</td>
                     </tr>
                     <tr>
                         <th>This Month</th>
-                        <td>5</td>
-                        <td>1</td>
+                        <td>5 (Wednesday)</td>
+                        <td>1 (Monday)</td>
+                        <td>80</td>
                         <td>3</td>
                     </tr>
                 </tbody>
@@ -50,9 +63,9 @@
 
             <p></p>
 
-            <table>
+            <table class="table table-warning table-striped-columns">
                 <ht1>This Week:</ht1>
-                <thead>
+                <thead class="table-dark">
                     <th>Sunday</th>
                     <th>Monday</th>
                     <th>Tuesday</th>
@@ -80,11 +93,12 @@
             </p>
         </main>
 
-        <footer>
-            <hr />
-            <span class="author">Website created by Packer Barlow</span>
-            <br />
-            <a href="https://github.com/packerb2/Introvert_Calander_Startup.git">My GitHub</a>
+        <footer class="bg-dark text-white-50">
+            <div class="container-fluid">
+                <hr />
+                <span class="text-rest">Website created by Packer Barlow</span>
+                <a class="text-reset" href="https://github.com/packerb2/Introvert_Calander_Startup.git">My GitHub</a>
+                </div>
         </footer>
     </body>
 
