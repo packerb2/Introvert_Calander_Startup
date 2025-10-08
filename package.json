@@ -1,16 +1,24 @@
 {
-  "name": "startup",
+  "name": "introvert_calander_startup",
   "version": "1.0.0",
-  "description": "",
+  "description": "[My Notes](notes.md)",
   "main": "index.js",
   "scripts": {
     "dev": "vite",
     "build": "vite build",
     "preview": "vite preview"
   },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/packerb2/Introvert_Calander_Startup.git"
+  },
   "keywords": [],
   "author": "",
   "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/packerb2/Introvert_Calander_Startup/issues"
+  },
+  "homepage": "https://github.com/packerb2/Introvert_Calander_Startup#readme",
   "devDependencies": {
     "vite": "^7.1.9"
   }
