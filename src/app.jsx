@@ -16,16 +16,16 @@ export default function App() {
                     <font size="6"><a class="navbar-brand" href="#">Spoon Saver Calander</a></font>
                     <menu className="navbar-nav">
                         <li className="nav-item">
-                            <a className="nav-link active" href="login.html">Home</a>
+                            <NavLink className='nav-link' to=''>Home</NavLink>
                         </li>
                         <li className="nav-item">
-                            <a className="nav-link" href="calander.html">View Calander</a>
+                            <NavLink className='nav-link' to='calander'>View Calander</NavLink>
                         </li>
                         <li className="nav-item">
-                            <a className="nav-link" href="analysis.html">Spoon Analysis</a>
+                            <NavLink className='nav-link' to='analysis'>Spoon Analysis</NavLink>
                         </li>
                         <li className="nav-item">
-                            <a className="nav-link" href="about.html">About</a>
+                            <NavLink className='nav-link' to='about'>About</NavLink>
                         </li>
                     </menu>
                 </nav>
