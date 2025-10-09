@@ -10,7 +10,7 @@ import { About } from './about/about';
 export default function App() {
   return (
     <BrowserRouter>
-        <div  className="bg-dark text-light">
+        <div  className="body text-light">
             <header className="container-fluid">
                 <nav className="nabbar navbar-dark">
                     <font size="6"><a class="navbar-brand" href="#">Spoon Saver Calander</a></font>
@@ -39,7 +39,7 @@ export default function App() {
             <Route path='*' element={<NotFound />} />
         </Routes>
 
-            <footer className="bg-dark text-white-50">
+            <footer className="text-white-50">
                 <div className="container-fluid">
                     <hr />
                     <span className="text-rest">Website created by Packer Barlow</span>
