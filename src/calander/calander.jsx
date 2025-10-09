@@ -33,7 +33,7 @@ export function Calander() {
                       <h3><span className="month-name">Decembruary</span></h3>
                   </header>
               </div>
-              <tr>
+              <tr className="week">
                   <th>Sunday</th>
                   <th>Monday</th>
                   <th>Tuesday</th>
@@ -42,290 +42,290 @@ export function Calander() {
                   <th>Friday</th>
                   <th>Saturday</th>
               </tr>
-              <tr>
+              <tr className="week">
                   <td>
-                      <button>
-                          <svg aria-hidden="true" viewBox="0 0 100 100" height="50" width="70"></svg>
+                      <button className="daybutton">
+                          <svg aria-hidden="true" viewBox="0 0 100 100" height="50"></svg>
                           <span className="date">1</span>
                           <br />
                           <span className="Events">Number of Events: x</span>
                       </button>
                   </td>
                   <td>
-                      <button>
-                          <svg aria-hidden="true" viewBox="0 0 100 100" height="50" width="70"></svg>
+                      <button className="daybutton">
+                          <svg aria-hidden="true" viewBox="0 0 100 100" height="50"></svg>
                           <span className="date">2</span>
                           <br />
                           <span className="Events">Number of Events: x</span>
                       </button>
                   </td>
                   <td>
-                      <button>
-                          <svg aria-hidden="true" viewBox="0 0 100 100" height="50" width="70"></svg>
+                      <button className="daybutton">
+                          <svg aria-hidden="true" viewBox="0 0 100 100" height="50"></svg>
                           <span className="date">3</span>
                           <br />
                           <span className="Events">Number of Events: x</span>
                       </button>
                   </td>
                   <td>
-                      <button>
-                          <svg aria-hidden="true" viewBox="0 0 100 100" height="50" width="70"></svg>
+                      <button className="daybutton">
+                          <svg aria-hidden="true" viewBox="0 0 100 100" height="50"></svg>
                           <span className="date">4</span>
                           <br />
                           <span className="Events">Number of Events: x</span>
                       </button>
                   </td>
                   <td>
-                      <button>
-                          <svg aria-hidden="true" viewBox="0 0 100 100" height="50" width="70"></svg>
+                      <button className="daybutton">
+                          <svg aria-hidden="true" viewBox="0 0 100 100" height="50"></svg>
                           <span className="date">5</span>
                           <br />
                           <span className="Events">Number of Events: x</span>
                       </button>
                   </td>
                   <td>
-                      <button>
-                          <svg aria-hidden="true" viewBox="0 0 100 100" height="50" width="70"></svg>
+                      <button className="daybutton">
+                          <svg aria-hidden="true" viewBox="0 0 100 100" height="50"></svg>
                           <span className="date">6</span>
                           <br />
                           <span className="Events">Number of Events: x</span>
                       </button>
                   </td>
                   <td>
-                      <button>
-                          <svg aria-hidden="true" viewBox="0 0 100 100" height="50" width="70"></svg>
+                      <button className="daybutton">
+                          <svg aria-hidden="true" viewBox="0 0 100 100" height="50"></svg>
                           <span className="date">7</span>
                           <br />
                           <span className="Events">Number of Events: x</span>
                       </button>
                   </td>
               </tr>
-              <tr>
+              <tr className="week">
                   <td>
-                      <button>
-                          <svg aria-hidden="true" viewBox="0 0 100 100" height="50" width="70"></svg>
+                      <button className="daybutton">
+                          <svg aria-hidden="true" viewBox="0 0 100 100" height="50"></svg>
                           <span className="date">8</span>
                           <br />
                           <span className="Events">Number of Events: x</span>
                       </button>
                   </td>
                   <td>
-                      <button>
-                          <svg aria-hidden="true" viewBox="0 0 100 100" height="50" width="70"></svg>
+                      <button className="daybutton">
+                          <svg aria-hidden="true" viewBox="0 0 100 100" height="50"></svg>
                           <span className="date">9</span>
                           <br />
                           <span className="Events">Number of Events: x</span>
                       </button>
                   </td>
                   <td>
-                      <button>
-                          <svg aria-hidden="true" viewBox="0 0 100 100" height="50" width="70"></svg>
+                      <button className="daybutton">
+                          <svg aria-hidden="true" viewBox="0 0 100 100" height="50"></svg>
                           <span className="date">10</span>
                           <br />
                           <span className="Events">Number of Events: x</span>
                       </button>
                   </td>
                   <td>
-                      <button>
-                          <svg aria-hidden="true" viewBox="0 0 100 100" height="50" width="70"></svg>
+                      <button className="daybutton">
+                          <svg aria-hidden="true" viewBox="0 0 100 100" height="50"></svg>
                           <span className="date">11</span>
                           <br />
                           <span className="Events">Number of Events: x</span>
                       </button>
                   </td>
                   <td>
-                      <button>
-                          <svg aria-hidden="true" viewBox="0 0 100 100" height="50" width="70"></svg>
+                      <button className="daybutton">
+                          <svg aria-hidden="true" viewBox="0 0 100 100" height="50"></svg>
                           <span className="date">12</span>
                           <br />
                           <span className="Events">Number of Events: x</span>
                       </button>
                   </td>
                   <td>
-                      <button>
-                          <svg aria-hidden="true" viewBox="0 0 100 100" height="50" width="70"></svg>
+                      <button className="daybutton">
+                          <svg aria-hidden="true" viewBox="0 0 100 100" height="50"></svg>
                           <span className="date">13</span>
                           <br />
                           <span className="Events">Number of Events: x</span>
                       </button>
                   </td>
                   <td>
-                      <button>
-                          <svg aria-hidden="true" viewBox="0 0 100 100" height="50" width="70"></svg>
+                      <button className="daybutton">
+                          <svg aria-hidden="true" viewBox="0 0 100 100" height="50"></svg>
                           <span className="date">14</span>
                           <br />
                           <span className="Events">Number of Events: x</span>
                       </button>
                   </td>
               </tr>
-              <tr>
+              <tr className="week">
                   <td>
-                      <button>
-                          <svg aria-hidden="true" viewBox="0 0 100 100" height="50" width="70"></svg>
+                      <button className="daybutton">
+                          <svg aria-hidden="true" viewBox="0 0 100 100" height="50"></svg>
                           <span className="date">15</span>
                           <br />
                           <span className="Events">Number of Events: x</span>
                       </button>
                   </td>
                   <td>
-                      <button>
-                          <svg aria-hidden="true" viewBox="0 0 100 100" height="50" width="70"></svg>
+                      <button className="daybutton">
+                          <svg aria-hidden="true" viewBox="0 0 100 100" height="50"></svg>
                           <span className="date">16</span>
                           <br />
                           <span className="Events">Number of Events: x</span>
                       </button>
                   </td>
                   <td>
-                      <button>
-                          <svg aria-hidden="true" viewBox="0 0 100 100" height="50" width="70"></svg>
+                      <button className="daybutton">
+                          <svg aria-hidden="true" viewBox="0 0 100 100" height="50"></svg>
                           <span className="date">17</span>
                           <br />
                           <span className="Events">Number of Events: x</span>
                       </button>
                   </td>
                   <td>
-                      <button>
-                          <svg aria-hidden="true" viewBox="0 0 100 100" height="50" width="70"></svg>
+                      <button className="daybutton">
+                          <svg aria-hidden="true" viewBox="0 0 100 100" height="50"></svg>
                           <span className="date">18</span>
                           <br />
                           <span className="Events">Number of Events: x</span>
                       </button>
                   </td>
                   <td>
-                      <button>
-                          <svg aria-hidden="true" viewBox="0 0 100 100" height="50" width="70"></svg>
+                      <button className="daybutton">
+                          <svg aria-hidden="true" viewBox="0 0 100 100" height="50"></svg>
                           <span className="date">19</span>
                           <br />
                           <span className="Events">Number of Events: x</span>
                       </button>
                   </td>
                   <td>
-                      <button>
-                          <svg aria-hidden="true" viewBox="0 0 100 100" height="50" width="70"></svg>
+                      <button className="daybutton">
+                          <svg aria-hidden="true" viewBox="0 0 100 100" height="50"></svg>
                           <span className="date">20</span>
                           <br />
                           <span className="Events">Number of Events: x</span>
                       </button>
                   </td>
                   <td>
-                      <button>
-                          <svg aria-hidden="true" viewBox="0 0 100 100" height="50" width="70"></svg>
+                      <button className="daybutton">
+                          <svg aria-hidden="true" viewBox="0 0 100 100" height="50"></svg>
                           <span className="date">21</span>
                           <br />
                           <span className="Events">Number of Events: x</span>
                       </button>
                   </td>
               </tr>
-              <tr>
+              <tr className="week">
                   <td>
-                      <button>
-                          <svg aria-hidden="true" viewBox="0 0 100 100" height="50" width="70"></svg>
+                      <button className="daybutton">
+                          <svg aria-hidden="true" viewBox="0 0 100 100" height="50"></svg>
                           <span className="date">22</span>
                           <br />
                           <span className="Events">Number of Events: x</span>
                       </button>
                   </td>
                   <td>
-                      <button>
-                          <svg aria-hidden="true" viewBox="0 0 100 100" height="50" width="70"></svg>
+                      <button className="daybutton">
+                          <svg aria-hidden="true" viewBox="0 0 100 100" height="50"></svg>
                           <span className="date">23</span>
                           <br />
                           <span className="Events">Number of Events: x</span>
                       </button>
                   </td>
                   <td>
-                      <button>
-                          <svg aria-hidden="true" viewBox="0 0 100 100" height="50" width="70"></svg>
+                      <button className="daybutton">
+                          <svg aria-hidden="true" viewBox="0 0 100 100" height="50"></svg>
                           <span className="date">24</span>
                           <br />
                           <span className="Events">Number of Events: x</span>
                       </button>
                   </td>
                   <td>
-                      <button>
-                          <svg aria-hidden="true" viewBox="0 0 100 100" height="50" width="70"></svg>
+                      <button className="daybutton">
+                          <svg aria-hidden="true" viewBox="0 0 100 100" height="50"></svg>
                           <span className="date">25</span>
                           <br />
                           <span className="Events">Number of Events: x</span>
                       </button>
                   </td>
                   <td>
-                      <button>
-                          <svg aria-hidden="true" viewBox="0 0 100 100" height="50" width="70"></svg>
+                      <button className="daybutton">
+                          <svg aria-hidden="true" viewBox="0 0 100 100" height="50"></svg>
                           <span className="date">26</span>
                           <br />
                           <span className="Events">Number of Events: x</span>
                       </button>
                   </td>
                   <td>
-                      <button>
-                          <svg aria-hidden="true" viewBox="0 0 100 100" height="50" width="70"></svg>
+                      <button className="daybutton">
+                          <svg aria-hidden="true" viewBox="0 0 100 100" height="50"></svg>
                           <span className="date">27</span>
                           <br />
                           <span className="Events">Number of Events: x</span>
                       </button>
                   </td>
                   <td>
-                      <button>
-                          <svg aria-hidden="true" viewBox="0 0 100 100" height="50" width="70"></svg>
+                      <button className="daybutton">
+                          <svg aria-hidden="true" viewBox="0 0 100 100" height="50"></svg>
                           <span className="date">28</span>
                           <br />
                           <span className="Events">Number of Events: x</span>
                       </button>
                   </td>
               </tr>
-              <tr>
+              <tr className="week">
                   <td>
-                      <button>
-                          <svg aria-hidden="true" viewBox="0 0 100 100" height="50" width="70"></svg>
+                      <button className="daybutton">
+                          <svg aria-hidden="true" viewBox="0 0 100 100" height="50"></svg>
                           <span className="date">29</span>
                           <br />
                           <span className="Events">Number of Events: x</span>
                       </button>
                   </td>
                   <td>
-                      <button>
-                          <svg aria-hidden="true" viewBox="0 0 100 100" height="50" width="70"></svg>
+                      <button className="daybutton">
+                          <svg aria-hidden="true" viewBox="0 0 100 100" height="50"></svg>
                           <span className="date">30</span>
                           <br />
                           <span className="Events">Number of Events: x</span>
                       </button>
                   </td>
                   <td>
-                      <button>
-                          <svg aria-hidden="true" viewBox="0 0 100 100" height="50" width="70"></svg>
+                      <button className="daybutton">
+                          <svg aria-hidden="true" viewBox="0 0 100 100" height="50"></svg>
                           <span className="date">31</span>
                           <br />
                           <span className="Events">Number of Events: x</span>
                       </button>
                   </td>
                   <td>
-                      <button>
-                          <svg aria-hidden="true" viewBox="0 0 100 100" height="50" width="70"></svg>
+                      <button className="daybutton">
+                          <svg aria-hidden="true" viewBox="0 0 100 100" height="50"></svg>
                           <span className="date">32</span>
                           <br />
                           <span className="Events">Number of Events: x</span>
                       </button>
                   </td>
                   <td>
-                      <button>
-                          <svg aria-hidden="true" viewBox="0 0 100 100" height="50" width="70"></svg>
+                      <button className="daybutton">
+                          <svg aria-hidden="true" viewBox="0 0 100 100" height="50"></svg>
                           <span className="date">33</span>
                           <br />
                           <span className="Events">Number of Events: x</span>
                       </button>
                   </td>
                   <td>
-                      <button>
-                          <svg aria-hidden="true" viewBox="0 0 100 100" height="50" width="70"></svg>
+                      <button className="daybutton">
+                          <svg aria-hidden="true" viewBox="0 0 100 100" height="50"></svg>
                           <span className="date">34</span>
                           <br />
                           <span className="Events">Number of Events: x</span>
                       </button>
                   </td>
                   <td>
-                      <button>
-                          <svg aria-hidden="true" viewBox="0 0 100 100" height="50" width="70"></svg>
+                      <button className="daybutton">
+                          <svg aria-hidden="true" viewBox="0 0 100 100" height="50"></svg>
                           <span className="date">35</span>
                           <br />
                           <span className="Events">Number of Events: x</span>

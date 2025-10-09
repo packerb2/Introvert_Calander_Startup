@@ -32,6 +32,7 @@ main {
 .cancel {border-radius: 8px;}
 .cancel:hover {background-color: red;}
 
+
 footer {
   flex: 0 30px;
 }
