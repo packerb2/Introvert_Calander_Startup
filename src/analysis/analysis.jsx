@@ -6,13 +6,12 @@ export function Analysis() {
     <main className="container-fluid bg-secondary text-center">
       <p>A Summary of the amount of Spoons used by your recent activities.</p>
       <table className="table table-warning table-striped-columns">
-          <ht1>At a Glance:</ht1>
           <thead className="table-dark">
               <th></th>
-              <th>Highest Score</th>
-              <th>Lowest Score</th>
-              <th>Total Score</th>
-              <th>Average Score</th>
+              <th>Highest Score |</th>
+              <th>Lowest Score |</th>
+              <th>Total Score |</th>
+              <th>Average Score |</th>
           </thead>
           <tbody>
               <tr>
@@ -33,16 +32,15 @@ export function Analysis() {
       </table>
 
       <p></p>
-
+      <heading>Your Week:</heading>
       <table className="table table-warning table-striped-columns">
-          <ht1>This Week:</ht1>
           <thead className="table-dark">
-              <th>Sunday</th>
-              <th>Monday</th>
-              <th>Tuesday</th>
-              <th>Wednesday</th>
-              <th>Thursday</th>
-              <th>Friday</th>
+              <th>Sunday |</th>
+              <th>Monday |</th>
+              <th>Tuesday |</th>
+              <th>Wednesday |</th>
+              <th>Thursday |</th>
+              <th>Friday |</th>
               <th>Saturday</th>
           </thead>
           <tbody>
