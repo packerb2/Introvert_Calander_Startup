@@ -2,6 +2,12 @@ import React from 'react';
 import './about.css';
 
 export function About() {
+  const [imageUrl, setImageUrl] = React.useState('feature-image-spoon-theory-jpg.webp');
+
+  React.useEffect(() => {
+    setImageUrl(`feature-image-spoon-theory-jpg.webp`);
+  }, []);
+
   return (
     <main className="container-fluid bg-secondary text-center">
       <p>
@@ -15,7 +21,7 @@ export function About() {
           The goal of this calander is to help people to better visualize where their energy, or spoons, are being spent and to assist
           in better managing their energy so that they can avoid burnout and focus on whatever is most important to them.
       </p>
-      <div id="picture" className="picture-box"><img width="600px" src="feature-image-spoon-theory-jpg.webp" /></div>
+      <div id="picture" className="picture-box"><img width="600px" src={imageUrl} /></div>
       <p className="credit">Image by Ackadia</p>
     </main>
   );

@@ -18,6 +18,10 @@ main {
   background-color: rgb(33, 26, 80);
 }
 
+p {
+  margin: 1% 5%;
+}
+
 .credit {
     font-size: 10px;
 }
