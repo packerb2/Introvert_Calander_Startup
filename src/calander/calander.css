@@ -27,9 +27,9 @@ main {
 .dismiss:hover {background-color: black; color: white;}
 .addspoon {border-radius: 8px;}
 .addspoon:hover {background-color: black; color: white;}
-.soft {border-radius: 8px;}
+.soft {border-radius: 8px; margin-right: 1%;}
 .soft:hover {background-color: darksalmon;}
-.cancel {border-radius: 8px;}
+.cancel {border-radius: 8px; margin-left: 1%;}
 .cancel:hover {background-color: red;}
 
 
@@ -37,7 +37,7 @@ footer {
   flex: 0 30px;
 }
 
-.calandertop {
+.calandernew {
   flex: 1;
   display: flex;
   gap: 70px;
@@ -45,6 +45,22 @@ footer {
   list-style: none;
   align-items: center;
   justify-content: space-around;
+}
+
+.cInput {
+  flex: 1;
+  display: flex;
+  gap: 10px;
+  margin-top: 0.5%;
+  margin-bottom: 2%;
+  flex-direction: row !important;
+  list-style: none;
+  align-items: center;
+  justify-content: space-around;
+}
+
+h3 {
+  margin-top: 1%
 }
 
 .notifications {
