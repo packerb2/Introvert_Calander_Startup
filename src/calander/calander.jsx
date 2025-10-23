@@ -3,7 +3,6 @@ import './calander.css';
 
 export function Calander() {
     const [eventsList, updateEventsList] = React.useState([]);
-    const [eventDetails, setEventDetails] = React.useState();
     // const newEventsList = [...eventsList, eventDetails];
     // React.useEffect(() => {
     //     const oldEventsList = localStorage.getItem('eventsList');
@@ -14,6 +13,7 @@ export function Calander() {
         console.log('event name:', en);
         const newEvent = [en, ed, et, ep, es];
         updateEventsList([...eventsList, newEvent]);
+        // reset local storage slots to empty after creating event
     }
 
   return (
