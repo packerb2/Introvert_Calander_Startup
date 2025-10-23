@@ -18,7 +18,7 @@ export default function App() {
         <div  className="body text-light">
             <header className="container-fluid">
                 <nav className="nabbar navbar-dark">
-                    <font size="6"><a class="navbar-brand" href="#">Spoon Saver Calander</a></font>
+                    <font size="6"><a className="navbar-brand" href="#">Spoon Saver Calander</a></font>
                     <menu className="navbar-nav">
                         <li className="nav-item">
                             <NavLink className='nav-link' to=''>Home</NavLink>

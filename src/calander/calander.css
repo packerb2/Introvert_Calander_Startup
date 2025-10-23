@@ -47,6 +47,10 @@ footer {
   justify-content: space-around;
 }
 
+ul {
+  list-style: '';
+}
+
 .cInput {
   flex: 1;
   display: flex;
