@@ -4,7 +4,7 @@ import './analysis.css';
 export function Analysis() {
     const [fullEventsList, setEventsList] = React.useState([]);
     const total = 0;
-    const averageScore = 0;
+    var averageScore = 0;
     const high = 0;
     const low = 0;
     React.useEffect(() => {
