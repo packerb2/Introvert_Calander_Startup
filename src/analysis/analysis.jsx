@@ -3,10 +3,10 @@ import './analysis.css';
 
 export function Analysis() {
     const [fullEventsList, setEventsList] = React.useState([]);
-    const total = 0;
+    var total = 0;
     var averageScore = 0;
-    const high = 0;
-    const low = 0;
+    var high = 0;
+    var low = 0;
     React.useEffect(() => {
         const eventsList = localStorage.getItem('eventsList');
         if (eventsList) {
@@ -16,7 +16,7 @@ export function Analysis() {
     if (fullEventsList.length !== 0) {
         low = 100;
         for (let i = 0; i < fullEventsList.length; i++) {
-            const spoon = Number(fullEventsList[i][4])
+            var spoon = Number(fullEventsList[i][4])
             total += spoon;
             if (spoon > high) {
                 high = spoon;
