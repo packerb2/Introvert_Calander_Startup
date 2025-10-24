@@ -2,6 +2,11 @@ import React from 'react';
 import './calander.css';
 
 export function Calander() {
+    localStorage.setItem('eventname', '[name missing]');
+    localStorage.setItem('eventdate', '[date missing]');
+    localStorage.setItem('eventtime', '[time missing]');
+    localStorage.setItem('eventpeople', 'no one');
+    localStorage.setItem('eventspoons', '0');
     const [eventsList, updateEventsList] = React.useState([]);
     // const newEventsList = [...eventsList, eventDetails];
     // React.useEffect(() => {
@@ -13,7 +18,11 @@ export function Calander() {
         console.log('event name:', en);
         const newEvent = [en, ed, et, ep, es];
         updateEventsList([...eventsList, newEvent]);
-        // reset local storage slots to empty after creating event
+        localStorage.setItem('eventname', '[name missing]');
+        localStorage.setItem('eventdate', '[date missing]');
+        localStorage.setItem('eventtime', '[time missing]');
+        localStorage.setItem('eventpeople', 'no one');
+        localStorage.setItem('eventspoons', '0');
     }
 
   return (
@@ -26,7 +35,7 @@ export function Calander() {
         ) : (
             eventsList.map((eventItem, index) => (
             <li key={index}>
-                {eventItem[1]}, {eventItem[2]}: {eventItem[0]} with {eventItem[3]}
+                {eventItem[1]}, {eventItem[2]}: {eventItem[0]} with {eventItem[3]}. Spoon Estimate: {eventItem[4]}
             </li>
         )))}
           <hr />
@@ -52,29 +61,12 @@ export function Calander() {
                     <span className='input-group-text'>Invite People</span>
                     <input className='form-control' type='text' placeholder='friend@email' onChange={(e) => {localStorage.setItem('eventpeople', e.target.value)}} />
                 </li>
-                {/* <li>Select Spoons:</li>
-                <button className="addspoon" onClick={() => {
-                    if (localStorage.getItem('ld') = 0) {localStorage.setItem('ld', 1)}
-                    else {localStorage.setItem('ld', 0)}
-                }}>Long Distance</button>
-                <button className="addspoon" onClick={() => {
-                    if (localStorage.getItem('lg') = 0) {localStorage.setItem('lg', 1)}
-                    else {localStorage.setItem('lg', 0)}
-                }}>Large Gathering</button>
-                <button className="addspoon" onClick={() => {
-                    if (localStorage.getItem('rp') = 0) {localStorage.setItem('rp', 1)}
-                    else {localStorage.setItem('rp', 0)}
-                }}>Requires Packing</button>
-                <button className="addspoon" onClick={() => {
-                    if (localStorage.getItem('nle') = 0) {localStorage.setItem('nle', 1)}
-                    else {localStorage.setItem('nle', 0)}
-                }}>No Leaving Early</button>
-                <button className="addspoon" onClick={() => {
-                    if (localStorage.getItem('h') = 0) {localStorage.setItem('h', 1)}
-                    else {localStorage.setItem('h', 0)}
-                }}>Hosting</button> */}
+                <li className='input-group mb-3'>
+                    <span className='input-group-text'>Enter Spoon Estimate:</span>
+                    <input className='form-control' type='text' placeholder='Number 1-5' onChange={(e) => {localStorage.setItem('eventspoons', e.target.value)}} />
+                </li>
             </div>
-            <button className="newevent" onClick={() => createEvent(localStorage.getItem('eventname'), localStorage.getItem('eventdate'), localStorage.getItem('eventtime'), localStorage.getItem('eventpeople'), [localStorage.getItem('ld'), localStorage.getItem('lg'), localStorage.getItem('rp'), localStorage.getItem('nle'), localStorage.getItem('h')])}>Create New Event</button>
+            <button className="newevent" onClick={() => createEvent(localStorage.getItem('eventname'), localStorage.getItem('eventdate'), localStorage.getItem('eventtime'), localStorage.getItem('eventpeople'), localStorage.getItem('eventspoons'))}>Create New Event</button>
           </ul>
           <li>
               <ul className="notifications">
