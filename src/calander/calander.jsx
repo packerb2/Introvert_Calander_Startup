@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 import './calander.css';
 
 export function Calander() {
@@ -20,6 +20,13 @@ export function Calander() {
         localStorage.setItem('eventpeople', 'no one');
         localStorage.setItem('eventspoons', '0');
     }
+    async function createEventFromNotification(en, ed, et, ep, es) {
+        setIsVisible(!isVisible);
+        console.log('event name:', en);
+        const newEvent = [en, ed, et, ep, es];
+        updateEventsList([...eventsList, newEvent]);
+    }
+    const [isVisible, setIsVisible] = React.useState(true);
 
   return (
     <main className="container-fluid bg-secondary text-center">
@@ -68,9 +75,12 @@ export function Calander() {
               <ul className="notifications">
                   <p></p>
                   <p>Notifications:</p>
-                  <li className="new-alert">{testFakeEvent[5]} has invited you to {testFakeEvent[0]} on {testFakeEvent[1]} at {testFakeEvent[2]}. Spoon Estimate: {testFakeEvent[4]}
-                      <li><button className="accept"onClick={() => createEvent(testFakeEvent[0], testFakeEvent[1], testFakeEvent[2], testFakeEvent[5], testFakeEvent[4])}>Accept</button> <button className="reject">Reject</button></li>
-                  </li>
+                  {isVisible && 
+                    <li className="new-alert">{testFakeEvent[5]} has invited you to {testFakeEvent[0]} on {testFakeEvent[1]} at {testFakeEvent[2]}. Spoon Estimate: {testFakeEvent[4]}
+                      <li><button className="accept" onClick={() => createEventFromNotification(testFakeEvent[0], testFakeEvent[1], testFakeEvent[2], testFakeEvent[5], testFakeEvent[4])}>Accept</button>
+                      <button className="reject" onClick={() => setIsVisible(!isVisible)}>Reject</button></li>
+                    </li>
+                    }
               </ul>
           </li>
       </div>
