@@ -14,6 +14,11 @@ export function Calander() {
         console.log('event name:', en);
         const newEvent = [en, ed, et, ep, es];
         updateEventsList([...eventsList, newEvent]);
+        document.getElementById('newEventNameField').value = '';
+        document.getElementById('newEventDateField').value = '';
+        document.getElementById('newEventTimeField').value = '';
+        document.getElementById('newEventPeopleField').value = '';
+        document.getElementById('newEventSpoonField').value = '';
         localStorage.setItem('eventname', '[name missing]');
         localStorage.setItem('eventdate', '[date missing]');
         localStorage.setItem('eventtime', '[time missing]');
@@ -50,23 +55,23 @@ export function Calander() {
 
                 <li className='input-group mb-3'>
                     <span className='input-group-text'>Event Name</span>
-                    <input className='form-control' type='text' placeholder='Enter Name' onChange={(e) => {localStorage.setItem('eventname', e.target.value)}}/>
+                    <input className='form-control' id='newEventNameField' type='text' placeholder='Enter Name' onChange={(e) => {localStorage.setItem('eventname', e.target.value)}}/>
                 </li>
                 <li className='input-group mb-3'>
-                <span className='input-group-text'>Date</span>
-                <input className='form-control' type='text' placeholder='YYYY/MM/DD' onChange={(e) => {localStorage.setItem('eventdate', e.target.value)}} />
+                    <span className='input-group-text'>Date</span>
+                    <input className='form-control' id='newEventDateField' type='text' placeholder='YYYY/MM/DD' onChange={(e) => {localStorage.setItem('eventdate', e.target.value)}} />
                 </li>
                 <li className='input-group mb-3'>
                     <span className='input-group-text'>Time</span>
-                    <input className='form-control' type='text' placeholder='HH:MM' onChange={(e) => {localStorage.setItem('eventtime', e.target.value)}} />
+                    <input className='form-control' id='newEventTimeField' type='text' placeholder='HH:MM' onChange={(e) => {localStorage.setItem('eventtime', e.target.value)}} />
                 </li>
                 <li className='input-group mb-3'>
                     <span className='input-group-text'>Invite People</span>
-                    <input className='form-control' type='text' placeholder='friend@email' onChange={(e) => {localStorage.setItem('eventpeople', e.target.value)}} />
+                    <input className='form-control' id='newEventPeopleField' type='text' placeholder='friend@email' onChange={(e) => {localStorage.setItem('eventpeople', e.target.value)}} />
                 </li>
                 <li className='input-group mb-3'>
                     <span className='input-group-text'>Enter Spoon Estimate:</span>
-                    <input className='form-control' type='text' placeholder='Number 1-5' onChange={(e) => {localStorage.setItem('eventspoons', e.target.value)}} />
+                    <input className='form-control' id='newEventSpoonField' type='text' placeholder='Number 1-5' onChange={(e) => {localStorage.setItem('eventspoons', e.target.value)}} />
                 </li>
             </div>
             <button className="newevent" onClick={() => createEvent(localStorage.getItem('eventname'), localStorage.getItem('eventdate'), localStorage.getItem('eventtime'), localStorage.getItem('eventpeople'), localStorage.getItem('eventspoons'))}>Create New Event</button>
