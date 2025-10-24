@@ -2,18 +2,14 @@ import React from 'react';
 import './calander.css';
 
 export function Calander() {
+    const testFakeEvent = ['BBQ', '0000/00/00', '99:99', 'oops', '3', 'Lizard']
     localStorage.setItem('eventname', '[name missing]');
     localStorage.setItem('eventdate', '[date missing]');
     localStorage.setItem('eventtime', '[time missing]');
     localStorage.setItem('eventpeople', 'no one');
     localStorage.setItem('eventspoons', '0');
+
     const [eventsList, updateEventsList] = React.useState([]);
-    // const newEventsList = [...eventsList, eventDetails];
-    // React.useEffect(() => {
-    //     const oldEventsList = localStorage.getItem('eventsList');
-        
-    //     localStorage.setItem('eventsList', newEventsList);
-    // }, []);
     async function createEvent(en, ed, et, ep, es) {
         console.log('event name:', en);
         const newEvent = [en, ed, et, ep, es];
@@ -72,17 +68,8 @@ export function Calander() {
               <ul className="notifications">
                   <p></p>
                   <p>Notifications:</p>
-                  <li className="new-alert">Bob has invited you to an event: Barbeque
-                      <li><button className="accept">Accept</button> <button className="reject">Reject</button></li>
-                  </li>
-                  <li className="new-alert">Bob has invited you to an event: Movie Night
-                      <li><button className="accept">Accept</button> <button className="reject">Reject</button></li>
-                  </li>
-                  <li className="new-alert">Steven has canceled an event: Wedding
-                      <li><button className="dismiss">Dismiss</button></li>
-                  </li>
-                  <li className="new-alert">Joe has invited you to an event: Pool
-                      <li><button className="accept">Accept</button> <button className="reject">Reject</button></li>
+                  <li className="new-alert">{testFakeEvent[5]} has invited you to {testFakeEvent[0]} on {testFakeEvent[1]} at {testFakeEvent[2]}. Spoon Estimate: {testFakeEvent[4]}
+                      <li><button className="accept"onClick={() => createEvent(testFakeEvent[0], testFakeEvent[1], testFakeEvent[2], testFakeEvent[5], testFakeEvent[4])}>Accept</button> <button className="reject">Reject</button></li>
                   </li>
               </ul>
           </li>
