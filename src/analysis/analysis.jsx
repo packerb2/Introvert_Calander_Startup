@@ -2,62 +2,54 @@ import React from 'react';
 import './analysis.css';
 
 export function Analysis() {
+    const [fullEventsList, setEventsList] = React.useState([]);
+    const total = 0;
+    const averageScore = 0;
+    const high = 0;
+    const low = 0;
+    React.useEffect(() => {
+        const eventsList = localStorage.getItem('eventsList');
+        if (eventsList) {
+            setEventsList(JSON.parse(eventsList));
+        }
+    })
+    if (fullEventsList.length !== 0) {
+        low = 100;
+        for (let i = 0; i < fullEventsList.length; i++) {
+            const spoon = Number(fullEventsList[i][4])
+            total += spoon;
+            if (spoon > high) {
+                high = spoon;
+            }
+            if (spoon < low) {
+                low = spoon;
+            }
+        }
+        averageScore = total / fullEventsList.length;
+    }
+
   return (
     <main className="container-fluid bg-secondary text-center">
-      <p>A Summary of the amount of Spoons used by your recent activities.</p>
+      <p>A Summary of the amount of Spoons used by your activities.</p>
       <table className="table table-warning table-striped-columns">
           <thead className="table-dark">
-              <th></th>
-              <th>Highest Score |</th>
-              <th>Lowest Score |</th>
-              <th>Total Score |</th>
-              <th>Average Score |</th>
+              <th>Highest Spoon Score |</th>
+              <th>Lowest Spoon Score |</th>
+              <th>Total Spoon Score |</th>
+              <th>Average Spoon Score |</th>
           </thead>
           <tbody>
               <tr>
-                  <th>This Week</th>
-                  <td>5 (Wednesday)</td>
-                  <td>1 (Monday)</td>
-                  <td>23</td>
-                  <td>3</td>
-              </tr>
-              <tr>
-                  <th>This Month</th>
-                  <td>5 (Wednesday)</td>
-                  <td>1 (Monday)</td>
-                  <td>80</td>
-                  <td>3</td>
-              </tr>
-          </tbody>
-      </table>
-
-      <p></p>
-      <heading>Your Week:</heading>
-      <table className="table table-warning table-striped-columns">
-          <thead className="table-dark">
-              <th>Sunday |</th>
-              <th>Monday |</th>
-              <th>Tuesday |</th>
-              <th>Wednesday |</th>
-              <th>Thursday |</th>
-              <th>Friday |</th>
-              <th>Saturday</th>
-          </thead>
-          <tbody>
-              <tr>
-                  <td>5</td>
-                  <td>1</td>
-                  <td>3</td>
-                  <td>5</td>
-                  <td>1</td>
-                  <td>3</td>
-                  <td>5</td>
+                  <td>{high}</td>
+                  <td>{low}</td>
+                  <td>{total}</td>
+                  <td>{averageScore}</td>
               </tr>
           </tbody>
       </table>
 
       <p>
-          (For your own welbeing, please note that these scores are estimates at best and
+          (For your own welbeing, please note that these scores are estimates and
           that different people have different goals when it comes to spoon usage) 
       </p>
     </main>

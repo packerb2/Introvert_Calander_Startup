@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import './calander.css';
 
+
 export function Calander() {
     const testFakeEvent = ['BBQ', '0000/00/00', '99:99', 'oops', '3', 'Lizard']
     localStorage.setItem('eventname', '[name missing]');
@@ -11,7 +12,6 @@ export function Calander() {
 
     const [eventsList, updateEventsList] = React.useState([]);
     async function createEvent(en, ed, et, ep, es) {
-        console.log('event name:', en);
         const newEvent = [en, ed, et, ep, es];
         updateEventsList([...eventsList, newEvent]);
         document.getElementById('newEventNameField').value = '';
@@ -24,6 +24,7 @@ export function Calander() {
         localStorage.setItem('eventtime', '[time missing]');
         localStorage.setItem('eventpeople', 'no one');
         localStorage.setItem('eventspoons', '0');
+        localStorage.setItem('eventsList', eventsList);
     }
     async function createEventFromNotification(en, ed, et, ep, es) {
         setIsVisible(!isVisible);
