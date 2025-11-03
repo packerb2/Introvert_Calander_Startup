@@ -28,14 +28,14 @@ export default function App() {
                               <NavLink className='nav-link' to='calander'>View Calander</NavLink>
                           </li>
                         )}
-                        <li className="nav-item">
-                            <NavLink className='nav-link' to='analysis'>Spoon Analysis</NavLink>
-                        </li>
                         {authState === AuthState.Authenticated && (
                           <li className="nav-item">
-                              <NavLink className='nav-link' to='about'>About</NavLink>
+                              <NavLink className='nav-link' to='analysis'>Spoon Analysis</NavLink>
                           </li>
                         )}
+                        <li className="nav-item">
+                            <NavLink className='nav-link' to='about'>About</NavLink>
+                        </li>
                     </menu>
                 </nav>
             </header>
