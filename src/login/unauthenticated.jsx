@@ -9,14 +9,17 @@ export function Unauthenticated(props) {
   const [displayError, setDisplayError] = React.useState(null);
 
   async function loginUser() {
+    console.log('got into login');
     loginOrCreate(`/api/auth/login`);
   }
 
   async function createUser() {
+    console.log('got into create');
     loginOrCreate(`/api/auth/create`);
   }
 
   async function loginOrCreate(endpoint) {
+    console.log('got into log/create function');
     const response = await fetch(endpoint, {
       method: 'post',
       body: JSON.stringify({ email: userName, password: password }),
@@ -24,7 +27,9 @@ export function Unauthenticated(props) {
         'Content-type': 'application/json; charset=UTF-8',
       },
     });
+    console.log('got response')
     if (response?.status === 200) {
+      console.log('just before local');
       localStorage.setItem('userName', userName);
       props.onLogin(userName);
     } else {
