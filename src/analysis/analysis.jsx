@@ -8,11 +8,12 @@ export function Analysis() {
     var high = 0;
     var low = 0;
     React.useEffect(() => {
-        const eventsList = localStorage.getItem('eventsList');
-        if (eventsList) {
-            setEventsList(JSON.parse(eventsList));
-        }
-    })
+        fetch('/api/events')
+        .then((response) => response.json())
+        .then((fullEventsList) => {
+            setEventsList(fullEventsList);
+        });
+    }, []);
     if (fullEventsList.length !== 0) {
         low = 100;
         for (let i = 0; i < fullEventsList.length; i++) {

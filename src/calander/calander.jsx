@@ -25,6 +25,11 @@ export function Calander() {
         localStorage.setItem('eventpeople', 'no one');
         localStorage.setItem('eventspoons', '0');
         localStorage.setItem('eventsList', eventsList);
+        await fetch('/api/events', {
+            method: 'POST',
+            headers: { 'content-type': 'application/json' },
+            body: JSON.stringify(newEvent),
+        });
     }
     async function createEventFromNotification(en, ed, et, ep, es) {
         setIsVisible(!isVisible);
