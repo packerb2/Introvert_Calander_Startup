@@ -26,7 +26,7 @@ export function Analysis() {
                 low = spoon;
             }
         }
-        averageScore = total / fullEventsList.length;
+        averageScore = (total / fullEventsList.length).toFixed(2);
     }
 
   return (

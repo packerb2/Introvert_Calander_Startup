@@ -15,11 +15,11 @@ export function Calander() {
         //const newEvent = [en, ed, et, ep, es];
         const newEvent = {
             email : em,
-            "name" : en,
-            "date" : ed,
-            "time" : et,
-            "people" : ep,
-            "spoons" : es,
+            name : en,
+            date : ed,
+            time : et,
+            people : ep,
+            spoons : es,
         }
         updateEventsList([...eventsList, newEvent]);
         document.getElementById('newEventNameField').value = '';
@@ -56,11 +56,26 @@ export function Calander() {
             spoons : es,
         }
         updateEventsList([...eventsList, newEvent]);
+        await fetch('/api/event', {
+            method: 'post',
+            headers: { 'content-type': 'application/json' },
+            body: JSON.stringify(newEvent),
+        });
+        await fetch('/api/events', {
+            method: 'post',
+            headers: { 'content-type': 'application/json' },
+            body: JSON.stringify(em),
+        });
     }
     const [isVisible, setIsVisible] = React.useState(true);
     
     React.useEffect(() => {
         fetch('/api/events')
+        //fetch('/api/events', {
+            //method: 'post',
+            //headers: { 'content-type': 'application/json' },
+            //body: JSON.stringify(localStorage.getItem('username')),
+        //})
         .then((response) => response.json())
         .then((fullEventsList) => {
             updateEventsList(fullEventsList);
