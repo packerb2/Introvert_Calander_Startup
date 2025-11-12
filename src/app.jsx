@@ -1,12 +1,12 @@
 import React from 'react';
-import 'bootstrap/dist/css/bootstrap.min.css';
-import './app.css';
 import { BrowserRouter, NavLink, Route, Routes } from 'react-router-dom';
 import { Login } from './login/login';
 import { Calander } from './calander/calander';
 import { Analysis } from './analysis/analysis';
 import { About } from './about/about';
 import { AuthState } from './login/authState'
+import 'bootstrap/dist/css/bootstrap.min.css';
+import './app.css';
 
 export default function App() {
   const [userName, setUserName] = React.useState(localStorage.getItem('userName') || '');
