@@ -5,7 +5,7 @@ const url = `mongodb+srv://${config.userName}:${config.password}@${config.hostna
 const client = new MongoClient(url);
 const db = client.db('calander');
 const userCollection = db.collection('user');
-const scoreCollection = db.collection('event');
+const eventCollection = db.collection('event');
 
 // This will asynchronously test the connection and exit the process if it fails
 (async function testConnection() {
@@ -38,10 +38,15 @@ async function addEvent(event) {
   return eventCollection.insertOne(event);
 }
 
+function getEvents() {
+    return eventCollection.toArray();
+}
+
 module.exports = {
   getUser,
   getUserByToken,
   addUser,
   updateUser,
   addEvent,
+  getEvents,
 };
