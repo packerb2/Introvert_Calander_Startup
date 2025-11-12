@@ -11,8 +11,16 @@ export function Calander() {
     localStorage.setItem('eventspoons', '0');
 
     const [eventsList, updateEventsList] = React.useState([]);
-    async function createEvent(en, ed, et, ep, es) {
-        const newEvent = [en, ed, et, ep, es];
+    async function createEvent(em, en, ed, et, ep, es) {
+        //const newEvent = [en, ed, et, ep, es];
+        const newEvent = {
+            email : em,
+            "name" : en,
+            "date" : ed,
+            "time" : et,
+            "people" : ep,
+            "spoons" : es,
+        }
         updateEventsList([...eventsList, newEvent]);
         document.getElementById('newEventNameField').value = '';
         document.getElementById('newEventDateField').value = '';
@@ -25,16 +33,28 @@ export function Calander() {
         localStorage.setItem('eventpeople', 'no one');
         localStorage.setItem('eventspoons', '0');
         localStorage.setItem('eventsList', eventsList);
-        await fetch('/api/events', {
-            method: 'POST',
+        await fetch('/api/event', {
+            method: 'post',
             headers: { 'content-type': 'application/json' },
             body: JSON.stringify(newEvent),
         });
+        await fetch('/api/events', {
+            method: 'post',
+            headers: { 'content-type': 'application/json' },
+            body: JSON.stringify(em),
+        });
     }
-    async function createEventFromNotification(en, ed, et, ep, es) {
+    async function createEventFromNotification(em, en, ed, et, ep, es) {
         setIsVisible(!isVisible);
         console.log('event name:', en);
-        const newEvent = [en, ed, et, ep, es];
+        const newEvent = {
+            email : em,
+            name : en,
+            date : ed,
+            time : et,
+            people : ep,
+            spoons : es,
+        }
         updateEventsList([...eventsList, newEvent]);
     }
     const [isVisible, setIsVisible] = React.useState(true);
@@ -49,7 +69,7 @@ export function Calander() {
         ) : (
             eventsList.map((eventItem, index) => (
             <li key={index}>
-                {eventItem[1]}, {eventItem[2]}: {eventItem[0]} with {eventItem[3]}. Spoon Estimate: {eventItem[4]}
+                {eventItem.name}, {eventItem.date}: {eventItem.time} with {eventItem.people}. Spoon Estimate: {eventItem.spoons}
             </li>
         )))}
           <hr />
@@ -80,7 +100,7 @@ export function Calander() {
                     <input className='form-control' id='newEventSpoonField' type='text' placeholder='Number 1-5' onChange={(e) => {localStorage.setItem('eventspoons', e.target.value)}} />
                 </li>
             </div>
-            <button className="newevent" onClick={() => createEvent(localStorage.getItem('eventname'), localStorage.getItem('eventdate'), localStorage.getItem('eventtime'), localStorage.getItem('eventpeople'), localStorage.getItem('eventspoons'))}>Create New Event</button>
+            <button className="newevent" onClick={() => createEvent(localStorage.getItem('userName'), localStorage.getItem('eventname'), localStorage.getItem('eventdate'), localStorage.getItem('eventtime'), localStorage.getItem('eventpeople'), localStorage.getItem('eventspoons'))}>Create New Event</button>
           </ul>
           <li>
               <ul className="notifications">
@@ -88,7 +108,7 @@ export function Calander() {
                   <p>Notifications:</p>
                   {isVisible && 
                     <li className="new-alert">{testFakeEvent[5]} has invited you to {testFakeEvent[0]} on {testFakeEvent[1]} at {testFakeEvent[2]}. Spoon Estimate: {testFakeEvent[4]}
-                      <li><button className="accept" onClick={() => createEventFromNotification(testFakeEvent[0], testFakeEvent[1], testFakeEvent[2], testFakeEvent[5], testFakeEvent[4])}>Accept</button>
+                      <li><button className="accept" onClick={() => createEventFromNotification(localStorage.getItem('userName'), testFakeEvent[0], testFakeEvent[1], testFakeEvent[2], testFakeEvent[5], testFakeEvent[4])}>Accept</button>
                       <button className="reject" onClick={() => setIsVisible(!isVisible)}>Reject</button></li>
                     </li>
                     }
