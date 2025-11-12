@@ -17,7 +17,7 @@ export function Analysis() {
     if (fullEventsList.length !== 0) {
         low = 100;
         for (let i = 0; i < fullEventsList.length; i++) {
-            var spoon = Number(fullEventsList[i][4])
+            var spoon = Number(fullEventsList[i].spoons)
             total += spoon;
             if (spoon > high) {
                 high = spoon;

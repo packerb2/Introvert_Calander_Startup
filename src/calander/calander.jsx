@@ -58,6 +58,14 @@ export function Calander() {
         updateEventsList([...eventsList, newEvent]);
     }
     const [isVisible, setIsVisible] = React.useState(true);
+    
+    React.useEffect(() => {
+        fetch('/api/events')
+        .then((response) => response.json())
+        .then((fullEventsList) => {
+            updateEventsList(fullEventsList);
+        });
+    }, []);
 
   return (
     <main className="container-fluid bg-secondary text-center">
