@@ -39,7 +39,7 @@ async function addEvent(event) {
 }
 
 function getEvents() {
-    return eventCollection.toArray();
+    return eventCollection.find({}).toArray();
 }
 
 module.exports = {

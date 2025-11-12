@@ -76,7 +76,7 @@ const verifyAuth = async (req, res, next) => {
 };
 
 // GetEvents
-apiRouter.get('/events', verifyAuth, (req, res) => {
+apiRouter.get('/events', verifyAuth, async (req, res) => {
   const events = await DB.getEvents();
   res.send(events);
 });
