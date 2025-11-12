@@ -77,7 +77,9 @@ const verifyAuth = async (req, res, next) => {
 
 // GetEvents
 apiRouter.get('/events', verifyAuth, async (req, res) => {
-  const events = await DB.getEvents();
+  const user = await findUser('token', req.cookies[authCookieName]);
+  console.log(user)
+  const events = await DB.getEvents(user);
   res.send(events);
 });
 
@@ -99,8 +101,9 @@ app.use((_req, res) => {
 
 // updateEvents adds a new event to events.
 async function updateEvents(newEvent) {
+  const user = await findUser('token', req.cookies[authCookieName]);
   await DB.addEvent(newEvent);
-  return DB.getEvents();
+  return DB.getEvents(user);
 }
 
 async function createUser(email, password) {

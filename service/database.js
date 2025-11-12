@@ -38,8 +38,10 @@ async function addEvent(event) {
   return eventCollection.insertOne(event);
 }
 
-function getEvents() {
-    return eventCollection.find({}).toArray();
+function getEvents(user) {
+  if (user.email) {
+    return eventCollection.find({ email: user.email }).toArray();
+  }
 }
 
 module.exports = {

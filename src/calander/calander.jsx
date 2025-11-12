@@ -44,6 +44,7 @@ export function Calander() {
             body: JSON.stringify(em),
         });
     }
+
     async function createEventFromNotification(em, en, ed, et, ep, es) {
         setIsVisible(!isVisible);
         console.log('event name:', en);
@@ -71,11 +72,6 @@ export function Calander() {
     
     React.useEffect(() => {
         fetch('/api/events')
-        //fetch('/api/events', {
-            //method: 'post',
-            //headers: { 'content-type': 'application/json' },
-            //body: JSON.stringify(localStorage.getItem('username')),
-        //})
         .then((response) => response.json())
         .then((fullEventsList) => {
             updateEventsList(fullEventsList);
