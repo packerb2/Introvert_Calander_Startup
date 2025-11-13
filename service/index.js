@@ -101,9 +101,9 @@ app.use((_req, res) => {
 
 // updateEvents adds a new event to events.
 async function updateEvents(newEvent) {
-  const user = await findUser('token', req.cookies[authCookieName]);
+  //const user = await findUser('token', req.cookies[authCookieName]);
   await DB.addEvent(newEvent);
-  return DB.getEvents(user);
+  //return DB.getEvents(user);
 }
 
 async function createUser(email, password) {
