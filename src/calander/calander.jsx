@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import { NewEvent, Notifier } from './Notifier'
 import './calander.css';
 
 
@@ -42,6 +43,7 @@ export function Calander() {
             headers: { 'content-type': 'application/json' },
             body: JSON.stringify(em),
         });
+        Notifier.broadcastEvent(userName, NewEvent.Invite, 'has invited you to ' + en + ' at ' + ed + ', ' + et + '.');
     }
 
     async function createEventFromNotification(em, en, ed, et, ep, es) {

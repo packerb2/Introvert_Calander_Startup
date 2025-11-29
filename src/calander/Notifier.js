@@ -59,4 +59,4 @@ class EventNotifier {
 }
 
 const Notifier = new EventNotifier();
-export { NewEventEvent, Notifier };
+export { NewEvent, Notifier };
