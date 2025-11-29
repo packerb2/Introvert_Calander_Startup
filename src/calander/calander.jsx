@@ -127,6 +127,7 @@ export function Calander() {
                   <p></p>
                   <p>Notifications:</p>
                   {isVisible && 
+                  // reference simon players.jsx and .css for having notifications show up
                     <li className="new-alert">{testFakeEvent[5]} has invited you to {testFakeEvent[0]} on {testFakeEvent[1]} at {testFakeEvent[2]}. Spoon Estimate: {testFakeEvent[4]}
                       <li><button className="accept" onClick={() => createEventFromNotification(localStorage.getItem('userName'), testFakeEvent[0], testFakeEvent[1], testFakeEvent[2], testFakeEvent[5], testFakeEvent[4])}>Accept</button>
                       <button className="reject" onClick={() => setIsVisible(!isVisible)}>Reject</button></li>
