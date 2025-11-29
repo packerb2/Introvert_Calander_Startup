@@ -12,7 +12,6 @@ export function Calander() {
 
     const [eventsList, updateEventsList] = React.useState([]);
     async function createEvent(em, en, ed, et, ep, es) {
-        //const newEvent = [en, ed, et, ep, es];
         const newEvent = {
             email : em,
             name : en,
