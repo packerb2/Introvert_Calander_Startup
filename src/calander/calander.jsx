@@ -3,6 +3,52 @@ import { NewEvent, Notifier } from './Notifier'
 import './calander.css';
 
 
+export function Notify(props) {
+  const userName = props.userName;
+
+  const [events, setEvent] = React.useState([]);
+
+  React.useEffect(() => {
+    Notifier.addHandler(handleEvent);
+
+    return () => {
+      Notifier.removeHandler(handleEvent);
+    };
+  });
+
+  function handleEvent(event) {
+    setEvent([...events, event]);
+  }
+
+  function createMessageArray() {
+    const messageArray = [];
+    for (const [i, event] of events.entries()) {
+      let message = 'unknown';
+      if (event.type === NewEvent.Invite) {
+        // was right here. continue going through the matching code in players.jsx from simon and fixing to make it work
+        message = `scored ${event.value.score}`;
+      }
+
+      messageArray.push(
+        <div key={i} className='event'>
+          <span className={'player-event'}>{event.from.split('@')[0]}</span>
+          {message}
+        </div>
+      );
+    }
+    return messageArray;
+  }
+
+  return (
+    <div className='players'>
+      Player
+      <span className='player-name'>{userName}</span>
+      <div id='player-messages'>{createMessageArray()}</div>
+    </div>
+  );
+}
+
+
 export function Calander() {
     const testFakeEvent = ['BBQ', '0000/00/00', '99:99', 'oops', '3', 'Lizard']
     localStorage.setItem('eventname', '[name missing]');
