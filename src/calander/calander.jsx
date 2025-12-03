@@ -25,13 +25,12 @@ export function Notify(props) {
     for (const [i, event] of events.entries()) {
       let message = 'unknown';
       if (event.type === NewEvent.Invite) {
-        // was right here. continue going through the matching code in players.jsx from simon and fixing to make it work
-        message = `scored ${event.value.score}`;
+        message = `${event.from} ${event.value}`;
       }
 
       messageArray.push(
         <div key={i} className='event'>
-          <span className={'player-event'}>{event.from.split('@')[0]}</span>
+          <span className={'user-event'}>{event.from.split('@')[0]}</span>
           {message}
         </div>
       );
@@ -40,10 +39,10 @@ export function Notify(props) {
   }
 
   return (
-    <div className='players'>
-      Player
-      <span className='player-name'>{userName}</span>
-      <div id='player-messages'>{createMessageArray()}</div>
+    <div className='alerts'>
+      Notifications
+      <span className='user-name'>{userName}</span>
+      <div id='messages'>{createMessageArray()}</div>
     </div>
   );
 }
@@ -168,7 +167,7 @@ export function Calander() {
             </div>
             <button className="newevent" onClick={() => createEvent(localStorage.getItem('userName'), localStorage.getItem('eventname'), localStorage.getItem('eventdate'), localStorage.getItem('eventtime'), localStorage.getItem('eventpeople'), localStorage.getItem('eventspoons'))}>Create New Event</button>
           </ul>
-          <li>
+          {/* <li>
               <ul className="notifications">
                   <p></p>
                   <p>Notifications:</p>
@@ -180,7 +179,7 @@ export function Calander() {
                     </li>
                     }
               </ul>
-          </li>
+          </li> */}
       </div>
     </main>
   );
