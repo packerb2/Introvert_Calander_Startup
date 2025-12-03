@@ -22,8 +22,9 @@ export function Calander() {
     const messageArray = [];
     for (const [i, event] of events.entries()) {
       let message = 'unknown';
-      message = `${event.from} ${event.value}`;
-    
+      if (event.type === NewEvent.Invite) {
+        message = `${event.from} has invited you to ${event.value.en} on ${event.value.ed} at ${event.value.et}. Spoon: ${event.value.es}`;
+      }
 
       messageArray.push(
         <div key={i} className='event'>
@@ -72,7 +73,7 @@ export function Calander() {
             headers: { 'content-type': 'application/json' },
             body: JSON.stringify(em),
         });
-        Notifier.broadcastEvent(userName, NewEvent.Invite, 'has invited you to ' + en + ' at ' + ed + ', ' + et + '.');
+        Notifier.broadcastEvent(userName, NewEvent.Invite, NewEvent);
     }
     
     React.useEffect(() => {
