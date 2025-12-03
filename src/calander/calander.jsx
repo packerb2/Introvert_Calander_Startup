@@ -34,7 +34,6 @@ export function Calander() {
     }
     return messageArray;
   }
-    const testFakeEvent = ['BBQ', '0000/00/00', '99:99', 'oops', '3', 'Lizard']
     localStorage.setItem('eventname', '[name missing]');
     localStorage.setItem('eventdate', '[date missing]');
     localStorage.setItem('eventtime', '[time missing]');
@@ -75,31 +74,6 @@ export function Calander() {
         });
         Notifier.broadcastEvent(userName, NewEvent.Invite, 'has invited you to ' + en + ' at ' + ed + ', ' + et + '.');
     }
-
-    async function createEventFromNotification(em, en, ed, et, ep, es) {
-        setIsVisible(!isVisible);
-        console.log('event name:', en);
-        const newEvent = {
-            email : em,
-            name : en,
-            date : ed,
-            time : et,
-            people : ep,
-            spoons : es,
-        }
-        updateEventsList([...eventsList, newEvent]);
-        await fetch('/api/event', {
-            method: 'post',
-            headers: { 'content-type': 'application/json' },
-            body: JSON.stringify(newEvent),
-        });
-        await fetch('/api/events', {
-            method: 'post',
-            headers: { 'content-type': 'application/json' },
-            body: JSON.stringify(em),
-        });
-    }
-    const [isVisible, setIsVisible] = React.useState(true);
     
     React.useEffect(() => {
         fetch('/api/events')
