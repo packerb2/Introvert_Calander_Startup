@@ -3,9 +3,7 @@ import { NewEvent, Notifier } from './Notifier'
 import './calander.css';
 
 
-export function Notify(props) {
-  const userName = props.userName;
-
+export function Calander() {
   const [events, setEvent] = React.useState([]);
 
   React.useEffect(() => {
@@ -24,9 +22,8 @@ export function Notify(props) {
     const messageArray = [];
     for (const [i, event] of events.entries()) {
       let message = 'unknown';
-      if (event.type === NewEvent.Invite) {
-        message = `${event.from} ${event.value}`;
-      }
+      message = `${event.from} ${event.value}`;
+    
 
       messageArray.push(
         <div key={i} className='event'>
@@ -37,18 +34,6 @@ export function Notify(props) {
     }
     return messageArray;
   }
-
-  return (
-    <div className='alerts'>
-      Notifications
-      <span className='user-name'>{userName}</span>
-      <div id='messages'>{createMessageArray()}</div>
-    </div>
-  );
-}
-
-
-export function Calander() {
     const testFakeEvent = ['BBQ', '0000/00/00', '99:99', 'oops', '3', 'Lizard']
     localStorage.setItem('eventname', '[name missing]');
     localStorage.setItem('eventdate', '[date missing]');
@@ -167,19 +152,12 @@ export function Calander() {
             </div>
             <button className="newevent" onClick={() => createEvent(localStorage.getItem('userName'), localStorage.getItem('eventname'), localStorage.getItem('eventdate'), localStorage.getItem('eventtime'), localStorage.getItem('eventpeople'), localStorage.getItem('eventspoons'))}>Create New Event</button>
           </ul>
-          {/* <li>
-              <ul className="notifications">
-                  <p></p>
-                  <p>Notifications:</p>
-                  {isVisible && 
-                  // reference simon players.jsx and .css for having notifications show up
-                    <li className="new-alert">{testFakeEvent[5]} has invited you to {testFakeEvent[0]} on {testFakeEvent[1]} at {testFakeEvent[2]}. Spoon Estimate: {testFakeEvent[4]}
-                      <li><button className="accept" onClick={() => createEventFromNotification(localStorage.getItem('userName'), testFakeEvent[0], testFakeEvent[1], testFakeEvent[2], testFakeEvent[5], testFakeEvent[4])}>Accept</button>
-                      <button className="reject" onClick={() => setIsVisible(!isVisible)}>Reject</button></li>
-                    </li>
-                    }
-              </ul>
-          </li> */}
+          <li>
+            <div className='alerts'>
+            Notifications
+            <div id='messages'>{createMessageArray()}</div>
+            </div>
+          </li>
       </div>
     </main>
   );
