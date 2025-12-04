@@ -163,7 +163,6 @@ export function Calander() {
             headers: { 'content-type': 'application/json' },
             body: JSON.stringify(em),
         });
-        sendMsg();
     }
 
     async function createEventFromNotification(em, en, ed, et, ep, es) {
@@ -232,8 +231,8 @@ export function Calander() {
                     <input className='form-control' id='newEventTimeField' type='text' placeholder='HH:MM' onChange={(e) => {localStorage.setItem('eventtime', e.target.value)}} />
                 </li>
                 <li className='input-group mb-3'>
-                    <span className='input-group-text'>Invite People</span>
-                    <input className='form-control' id='newEventPeopleField' type='text' placeholder='friend@email' onChange={(e) => {localStorage.setItem('eventpeople', e.target.value)}} />
+                    <span className='input-group-text'>Who's Coming</span>
+                    <input className='form-control' id='newEventPeopleField' type='text' placeholder='friends' onChange={(e) => {localStorage.setItem('eventpeople', e.target.value)}} />
                 </li>
                 <li className='input-group mb-3'>
                     <span className='input-group-text'>Enter Spoon Estimate:</span>
