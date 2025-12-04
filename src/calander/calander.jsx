@@ -46,10 +46,10 @@ function Message({ name, webSocket }) {
   return (
     <main>
       <fieldset id='chat-controls'>
-        <legend>Chat</legend>
-        <input disabled={disabled} onKeyDown={(e) => doneMessage(e)} value={message} onChange={(e) => setMessage(e.target.value)} type='text' />
-        <button disabled={disabled || !message} onClick={sendMsg}>
-          Send
+        <legend>Invite Details</legend>
+        <input onKeyDown={(e) => doneMessage(e)} value={message} onChange={(e) => setMessage(e.target.value)} type='text' />
+        <button onClick={sendMsg}>
+          Send Invite
         </button>
       </fieldset>
     </main>
@@ -121,9 +121,6 @@ class ChatClient {
   }
 }
 
-const root = ReactDOM.createRoot(document.getElementById('root'));
-root.render(<Chat webSocket={new ChatClient()} />);
-
 
 export function Calander() {
     const testFakeEvent = ['BBQ', '0000/00/00', '99:99', 'oops', '3', 'Lizard']
@@ -166,6 +163,7 @@ export function Calander() {
             headers: { 'content-type': 'application/json' },
             body: JSON.stringify(em),
         });
+        sendMsg();
     }
 
     async function createEventFromNotification(em, en, ed, et, ep, es) {
@@ -247,7 +245,7 @@ export function Calander() {
           <li>
               <ul className="notifications">
                   <p></p>
-                  <p>Notifications:</p>
+                  <p>Invites:</p>
                   <Chat webSocket={new ChatClient()} />
               </ul>
           </li>
