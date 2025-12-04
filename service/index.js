@@ -4,6 +4,7 @@ const express = require('express');
 const uuid = require('uuid');
 const app = express();
 const DB = require('./database.js');
+const { WebSocketServer } = require('ws');
 
 const authCookieName = 'token';
 
@@ -13,6 +14,9 @@ let events = [];
 
 // The service port. In production the front-end code is statically hosted by the service on the same port.
 const port = process.argv.length > 2 ? process.argv[2] : 4000;
+server = app.listen(port, () => {
+  console.log(`Listening on ${port}`);
+});
 
 // JSON body parsing using built-in middleware
 app.use(express.json());
@@ -22,6 +26,9 @@ app.use(cookieParser());
 
 // Serve up the front-end static content hosting
 app.use(express.static('public'));
+
+// Serve up the chat frontend
+app.use(express.static('./public'));
 
 // Router for service endpoints
 const apiRouter = express.Router();
@@ -141,3 +148,34 @@ function setAuthCookie(res, authToken) {
 const httpService = app.listen(port, () => {
   console.log(`Listening on port ${port}`);
 });
+
+// Create a websocket object
+const socketServer = new WebSocketServer({ server });
+
+socketServer.on('connection', (socket) => {
+  socket.isAlive = true;
+
+  // Forward messages to everyone except the sender
+  socket.on('message', function message(data) {
+    socketServer.clients.forEach(function each(client) {
+      if (client !== socket && client.readyState === WebSocket.OPEN) {
+        client.send(data);
+      }
+    });
+  });
+
+  // Respond to pong messages by marking the connection alive
+  socket.on('pong', () => {
+    socket.isAlive = true;
+  });
+});
+
+// Periodically send out a ping message to make sure clients are alive
+setInterval(() => {
+  socketServer.clients.forEach(function each(client) {
+    if (client.isAlive === false) return client.terminate();
+
+    client.isAlive = false;
+    client.ping();
+  });
+}, 10000);
