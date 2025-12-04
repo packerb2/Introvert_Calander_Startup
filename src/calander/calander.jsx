@@ -3,7 +3,9 @@ import { NewEvent, Notifier } from './Notifier'
 import './calander.css';
 
 
-export function Calander() {
+
+export function Calander(props) {
+  const userName = props.userName;
   const [events, setEvent] = React.useState([]);
 
   React.useEffect(() => {
@@ -22,13 +24,14 @@ export function Calander() {
     const messageArray = [];
     for (const [i, event] of events.entries()) {
       let message = '';
+      message = event.value.msg;
       if (event.type === NewEvent.Invite) {
-        message = `${event.from} has invited you to ${event.value.en} on ${event.value.ed} at ${event.value.et}. Spoon: ${event.value.es}`;
+        //message = `${event.from} has invited you to ${event.value.en} on ${event.value.ed} at ${event.value.et}. Spoon: ${event.value.es}`;
       }
 
       messageArray.push(
         <div key={i} className='event'>
-          <span className={'user-event'}>{event.from.split('@')[0]}</span>
+          <span className={'user-event'}>{event.from}</span>
           {message}
         </div>
       );
@@ -117,8 +120,8 @@ export function Calander() {
                     <input className='form-control' id='newEventTimeField' type='text' placeholder='HH:MM' onChange={(e) => {localStorage.setItem('eventtime', e.target.value)}} />
                 </li>
                 <li className='input-group mb-3'>
-                    <span className='input-group-text'>Invite People</span>
-                    <input className='form-control' id='newEventPeopleField' type='text' placeholder='friend@email' onChange={(e) => {localStorage.setItem('eventpeople', e.target.value)}} />
+                    <span className='input-group-text'>People who will be There</span>
+                    <input className='form-control' id='newEventPeopleField' type='text' placeholder="friend's Name " onChange={(e) => {localStorage.setItem('eventpeople', e.target.value)}} />
                 </li>
                 <li className='input-group mb-3'>
                     <span className='input-group-text'>Enter Spoon Estimate:</span>
