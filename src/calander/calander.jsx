@@ -1,43 +1,9 @@
 import React, { useState } from 'react';
-import { NewEvent, Notifier } from './Notifier'
 import './calander.css';
 
 
-
-export function Calander(props) {
-  const userName = props.userName;
-  const [events, setEvent] = React.useState([]);
-
-  React.useEffect(() => {
-    Notifier.addHandler(handleEvent);
-
-    return () => {
-      Notifier.removeHandler(handleEvent);
-    };
-  });
-
-  function handleEvent(event) {
-    setEvent([...events, event]);
-  }
-
-  function createMessageArray() {
-    const messageArray = [];
-    for (const [i, event] of events.entries()) {
-      let message = '';
-      message = event.value.msg;
-      if (event.type === NewEvent.Invite) {
-        //message = `${event.from} has invited you to ${event.value.en} on ${event.value.ed} at ${event.value.et}. Spoon: ${event.value.es}`;
-      }
-
-      messageArray.push(
-        <div key={i} className='event'>
-          <span className={'user-event'}>{event.from}</span>
-          {message}
-        </div>
-      );
-    }
-    return messageArray;
-  }
+export function Calander() {
+    const testFakeEvent = ['BBQ', '0000/00/00', '99:99', 'oops', '3', 'Lizard']
     localStorage.setItem('eventname', '[name missing]');
     localStorage.setItem('eventdate', '[date missing]');
     localStorage.setItem('eventtime', '[time missing]');
@@ -46,6 +12,7 @@ export function Calander(props) {
 
     const [eventsList, updateEventsList] = React.useState([]);
     async function createEvent(em, en, ed, et, ep, es) {
+        //const newEvent = [en, ed, et, ep, es];
         const newEvent = {
             email : em,
             name : en,
@@ -76,8 +43,32 @@ export function Calander(props) {
             headers: { 'content-type': 'application/json' },
             body: JSON.stringify(em),
         });
-        Notifier.broadcastEvent(userName, NewEvent.Invite, newEvent);
     }
+
+    async function createEventFromNotification(em, en, ed, et, ep, es) {
+        setIsVisible(!isVisible);
+        console.log('event name:', en);
+        const newEvent = {
+            email : em,
+            name : en,
+            date : ed,
+            time : et,
+            people : ep,
+            spoons : es,
+        }
+        updateEventsList([...eventsList, newEvent]);
+        await fetch('/api/event', {
+            method: 'post',
+            headers: { 'content-type': 'application/json' },
+            body: JSON.stringify(newEvent),
+        });
+        await fetch('/api/events', {
+            method: 'post',
+            headers: { 'content-type': 'application/json' },
+            body: JSON.stringify(em),
+        });
+    }
+    const [isVisible, setIsVisible] = React.useState(true);
     
     React.useEffect(() => {
         fetch('/api/events')
@@ -120,8 +111,8 @@ export function Calander(props) {
                     <input className='form-control' id='newEventTimeField' type='text' placeholder='HH:MM' onChange={(e) => {localStorage.setItem('eventtime', e.target.value)}} />
                 </li>
                 <li className='input-group mb-3'>
-                    <span className='input-group-text'>People who will be There</span>
-                    <input className='form-control' id='newEventPeopleField' type='text' placeholder="friend's Name " onChange={(e) => {localStorage.setItem('eventpeople', e.target.value)}} />
+                    <span className='input-group-text'>Invite People</span>
+                    <input className='form-control' id='newEventPeopleField' type='text' placeholder='friend@email' onChange={(e) => {localStorage.setItem('eventpeople', e.target.value)}} />
                 </li>
                 <li className='input-group mb-3'>
                     <span className='input-group-text'>Enter Spoon Estimate:</span>
@@ -131,10 +122,16 @@ export function Calander(props) {
             <button className="newevent" onClick={() => createEvent(localStorage.getItem('userName'), localStorage.getItem('eventname'), localStorage.getItem('eventdate'), localStorage.getItem('eventtime'), localStorage.getItem('eventpeople'), localStorage.getItem('eventspoons'))}>Create New Event</button>
           </ul>
           <li>
-            <div className='alerts'>
-            Notifications
-            <div id='messages'>{createMessageArray()}</div>
-            </div>
+              <ul className="notifications">
+                  <p></p>
+                  <p>Notifications:</p>
+                  {isVisible && 
+                    <li className="new-alert">{testFakeEvent[5]} has invited you to {testFakeEvent[0]} on {testFakeEvent[1]} at {testFakeEvent[2]}. Spoon Estimate: {testFakeEvent[4]}
+                      <li><button className="accept" onClick={() => createEventFromNotification(localStorage.getItem('userName'), testFakeEvent[0], testFakeEvent[1], testFakeEvent[2], testFakeEvent[5], testFakeEvent[4])}>Accept</button>
+                      <button className="reject" onClick={() => setIsVisible(!isVisible)}>Reject</button></li>
+                    </li>
+                    }
+              </ul>
           </li>
       </div>
     </main>
